@@ -18,3 +18,36 @@ Next Steps:
 - write new function called game() that does 5 rounds
 keeps score
 reports a winner or loser at the end
+
+2022-11-11 - session 1
+Next Steps:
+- create if else statements for all the possible win/loss combinations and their return string alerts
+
+Pseudo code
+rock wins scissors
+paper wins rock
+scissors wins paper
+
+IF selections are the same == Tie
+IF User selects rock and Computer selects scissors, User == Winner
+IF User selects rock and Computer selects paper, User !== Winner
+IF User selects paper and Computer selects rock, User == Winner
+IF User selects paper and Computer selects scissors, User !== Winner
+IF User selects scissors and Computer selects paper, User == Winner
+IF User selects scissors and Computer selects rock, User !== Winner
+
+2022-11-11 - END of session 1
+Seem to have the correct outcome displaying for the player winning or losing.
+Have player selection hard coded in for now. 
+Getting correct console.log for selections.
+
+Next to do:
+- prompt for input of Players Selection
+- transform Players Selection to allLowerCase
+<!-- - write new function called game() that does 5 rounds
+keeps score
+reports a winner or loser at the end -->
+
+
+
+
