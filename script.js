@@ -1,7 +1,9 @@
 let choicesArray = ['rock', 'paper', 'scissors'];
 let randomComputerChoice = choicesArray[Math.floor(Math.random() * choicesArray.length)];
+let playerInput = prompt('Type in rock, paper, or scissors');
 
-const playerSelection = "scissors";
+// const playerSelection = "rock";
+const playerSelection = playerInput.toLowerCase();
 const computerSelection = randomComputerChoice;
 
 function playRound(playerSelection, computerSelection) {

@@ -48,6 +48,12 @@ Next to do:
 keeps score
 reports a winner or loser at the end -->
 
-
+2022-11-11 3rd Working Session
+To do:
+[X] prompt for input of Players Selection
+[X] transform Players Selection to allLowerCase
+<!-- - write new function called game() that does 5 rounds
+keeps score
+reports a winner or loser at the end -->
 
 
