@@ -55,7 +55,7 @@ console.log("Computer Selection:", computerSelection);
 // [] write a function that plays a single round of Rock Paper Scissors
 // [] at end of round, return a string that declares the winner of the round
 // [] like this: "You lose! Paper beats Rock"
-// [] want to return the results of this function call and not console.log() them 
+// [] want to return the results of this function call and not console.log() them
 // [] because we're going to use the return values later on
 
 // function areDifferent(playerSelection, computerSelection) {
