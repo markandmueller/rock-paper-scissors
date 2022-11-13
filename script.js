@@ -25,15 +25,18 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore = computerScore += 1;
         return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+    } else if (
+        (playerSelection !== "rock" || "paper" || "scissors")) {
+        return 'Try choosing rock, paper, or scissors.'
     } else { return 'Whoops! Something is most definitely wrong.' }
 }
 // console.log(playRound(playerSelection, computerSelection));
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        // let playerInput = prompt('Type in rock, paper, or scissors');
-        // const playerSelection = playerInput.toLowerCase();
-        const playerSelection = "rock";
+        let playerInput = prompt('Type in rock, paper, or scissors');
+        const playerSelection = playerInput.toLowerCase();
+        // const playerSelection = "rock";
 
         // computer random choice selection
         let choicesArray = ['rock', 'paper', 'scissors'];
