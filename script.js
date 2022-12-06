@@ -1,64 +1,79 @@
-// starting score
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
-// console.log("Player Score:", playerScore);
-// console.log("Computer Score:", computerScore);
-// console.log("Ties:", drawScore);
+let playerSelection = undefined;
 
-// function that plays a single round of Rock Paper Scissors
-// improved to have 4 statements for if tie, if win, if lose, if else
-// improved to have score increments
+const p1ScoreHolder = document.querySelector('#p1Score');
+const compScoreHolder = document.querySelector('#compScore');
+const compChoiceDisplay = document.querySelector('#compChoiceDisplay');
+let roundMessage = document.querySelector('#roundMessage');
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', e => {
+    playerSelection = rock.value;
+    game();
+    // playRound(playerSelection, computerSelection);
+})
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', e => {
+    playerSelection = paper.value;
+    game();
+})
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', e => {
+    playerSelection = scissors.value;
+    game();
+})
+
+function game() {
+    let choicesArray = ['rock', 'paper', 'scissors'];
+    function getComputerChoice(choicesArray) {
+        return choicesArray[Math.floor(Math.random() * choicesArray.length)];
+    }
+    let computerSelection = getComputerChoice(choicesArray);
+    playRound(playerSelection, computerSelection);
+}
+
 function playRound(playerSelection, computerSelection) {
+    roundMessage.innerText = 'we played a round';
+    compChoiceDisplay.innerText = computerSelection;
     if (playerSelection == computerSelection) {
         drawScore = drawScore += 1;
-        return 'It is a TIE!';
+        console.log('It is a TIE!');
+        gameOver();
     } else if (
         (playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
         (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore = playerScore += 1;
-        return `You Win! ${playerSelection} beats ${computerSelection}.`;
+        p1ScoreHolder.innerText = playerScore;
+        console.log(`${playerSelection} beats ${computerSelection}.`);
+        gameOver();
     } else if (
         (playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore = computerScore += 1;
-        return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+        compScoreHolder.innerText = computerScore;
+        console.log(`${computerSelection} beats ${playerSelection}.`);
+        gameOver();
     } else if (
         (playerSelection !== "rock" || "paper" || "scissors")) {
-        return 'Try choosing rock, paper, or scissors.'
-    } else { return 'Whoops! Something is most definitely wrong.' }
-}
-// console.log(playRound(playerSelection, computerSelection));
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerInput = prompt('Type in rock, paper, or scissors');
-        const playerSelection = playerInput.toLowerCase();
-        // const playerSelection = "rock";
-
-        // computer random choice selection
-        let choicesArray = ['rock', 'paper', 'scissors'];
-        function getComputerChoice(choicesArray) {
-            return choicesArray[Math.floor(Math.random() * choicesArray.length)];
-        }
-        const computerSelection = getComputerChoice(choicesArray);
-
-        console.log(playRound(playerSelection, computerSelection));
-    } // end of for loop
-    // we have scores, now we want to add logic to declare a winner
-    if (playerScore > computerScore) {
-        console.log("You WON the match!");
-    } else if (playerScore < computerScore) {
-        console.log("You LOST the match!");
-    } else console.log("You TIED.");
+        console.log('Try choosing rock, paper, or scissors.');
+        gameOver();
+    } else {
+        console.log('Whoops! Something is most definitely wrong.');
+        gameOver();
+    }
 }
 
-game();
-
-// updated scores
-console.log("Rounds Won:", playerScore);
-console.log("Rounds Lost:", computerScore);
-console.log("Rounds Tied:", drawScore);
-
+function gameOver() {
+    // consider adding a dropdown for PLAY TO #?
+    if ((playerScore === 5) || (computerScore === 5)) {
+        if (playerScore > computerScore) {
+            console.log("You WON the match!");
+        } else if (playerScore < computerScore) {
+            console.log("You LOST the match!");
+        } else console.log("You TIED.");
+    }
+}

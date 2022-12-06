@@ -1,0 +1,18 @@
+#assignment {
+    width: 50%;
+    background-color: lightgray;
+    font-size: 18px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+#results {
+    background-color: lightgoldenrodyellow;
+    font-size: 18px;
+    padding: 20px;
+    margin: 20px 20px;
+}

@@ -6,13 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Project</title>
+    <link rel=stylesheet href="style.css">
 </head>
 
 <body>
     <H1>Rock Paper Scissors Project</H1>
+    <div id="rpsButtonsContainer">
+        <button value="rock" id="rock">Rock</button>
+        <button value="paper" id="paper">Paper</button>
+        <button value="scissors" id="scissors">Scissors</button>
+    </div>
+
+    <div id="results">
+        <p>Result console.logs will go here as DOM methods.</p>
+        <h2>Player 1 Score: <span id="p1Score">0</span></h2>
+        <h2>Computer Score: <span id="compScore">0</span></h2>
+        <h3>Computer chose: <span id="compChoiceDisplay"></span></h3>
+        <h3 id="roundMessage">Do you feel lucky punk?</h3>
+    </div>
+
+    <div id="assignment">
+        <p class="">In our UI, the player should be able to play the game by clicking on buttons rather than typing
+            their answer
+            in a prompt.</p>
+        <p class="">For now, remove the logic that plays exactly five rounds.</p>
+        <p class="done">Create three buttons, one for each selection.</p>
+        <p class="done">Add an event listener to the buttons</p>
+        <p class="done"> improve the event listeners on the buttons to:</p>
+        <p class="done">call your playRound function with the correct playerSelection every time a button is clicked.
+            (you
+            can keep the console.logs for this step)</p>
+        <p class="done">Add a div for displaying results</p>
+        <p class=""> and change all of your console.logs into DOM methods.</p>
+        <p class="">Display the running score</p>
+        <p class="">and announce a winner of the game once one player reaches 5 points.</p>
+        <p class="">You will likely have to refactor (rework/rewrite) your original code to make it work for this.
+            That’s OK! Reworking old code is an important part of a programmer’s life.</p>
+    </div>
 
     <!-- including javascript at very end of html body -->
     <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
+
+<!--
+    - game function not console logging when either score reaches 5
+    why? what and where do I need to tell the computer so it does what I want?
+-->
